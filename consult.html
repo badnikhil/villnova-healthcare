@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Consult | Villnova Healthcare</title>
+    <meta name="description" content="Villnova Healthcare offers science-backed, nature-inspired nutraceuticals for your holistic wellness.">
+    <link rel="icon" href="company logo etc..jpeg" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="company logo etc..jpeg" alt="Villnova Healthcare Logo" class="logo">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+                <a href="consult.html" class="active">Consult</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button class="btn-primary mobile-hidden" onclick="window.location.href='products.html'">Shop Now</button>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="consult-page" style="padding-top: 160px; padding-bottom: 80px; min-height: 80vh; background-color: var(--color-bg);">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Consult a Doctor</h2>
+                    <p class="section-subtitle">Get personalized advice from our experienced healthcare professionals.</p>
+                </div>
+                
+                <div style="max-width: 900px; margin: 40px auto; background: var(--color-white); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid rgba(0,0,0,0.04); overflow: hidden;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; gap: 0;">
+                        <div style="padding: 50px; background: linear-gradient(135deg, rgba(212,175,55,0.1), transparent);">
+                            <h3 style="color: var(--color-primary); font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px;">Book Your Session</h3>
+                            <p style="color: var(--color-text-muted); margin-bottom: 25px; line-height: 1.7;">Discuss your wellness goals, get product recommendations, and find the right holistic approach for your body with Dr. Amit Kumar Gupta and our team of experts.</p>
+                            <ul style="margin-bottom: 30px;">
+                                <li style="margin-bottom: 12px; display: flex; align-items: center; color: var(--color-text-main);"><span style="color: var(--color-gold); margin-right: 12px; font-weight: bold; font-size: 1.2rem;">✓</span> 1-on-1 Personalized Care</li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: center; color: var(--color-text-main);"><span style="color: var(--color-gold); margin-right: 12px; font-weight: bold; font-size: 1.2rem;">✓</span> Holistic Wellness Plans</li>
+                                <li style="margin-bottom: 12px; display: flex; align-items: center; color: var(--color-text-main);"><span style="color: var(--color-gold); margin-right: 12px; font-weight: bold; font-size: 1.2rem;">✓</span> Post-Consultation Support</li>
+                            </ul>
+                            <div style="margin-top: 40px;">
+                                <p style="font-weight: 600; color: var(--color-primary); margin-bottom: 5px;">Call Us Directly</p>
+                                <p style="font-size: 1.2rem; color: var(--color-gold);">+91 XXXXX XXXXX</p>
+                            </div>
+                        </div>
+                        <div style="padding: 50px; background: var(--color-bg-alt);">
+                            <h4 style="margin-bottom: 25px; font-size: 1.4rem; color: var(--color-primary);">Schedule Appointment</h4>
+                            <form style="display: flex; flex-direction: column; gap: 15px;">
+                                <input type="text" placeholder="Full Name" style="padding: 14px 18px; border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); outline: none; font-family: var(--font-body); width: 100%; transition: var(--transition);">
+                                <input type="email" placeholder="Email Address" style="padding: 14px 18px; border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); outline: none; font-family: var(--font-body); width: 100%; transition: var(--transition);">
+                                <input type="tel" placeholder="Phone Number" style="padding: 14px 18px; border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); outline: none; font-family: var(--font-body); width: 100%; transition: var(--transition);">
+                                <textarea placeholder="Describe your health concerns briefly..." rows="4" style="padding: 14px 18px; border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-sm); outline: none; font-family: var(--font-body); width: 100%; resize: none; transition: var(--transition);"></textarea>
+                                <button type="button" class="btn-primary" style="margin-top: 15px; border: none; width: 100%;">Request Consultation</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="company logo etc..jpeg" alt="Villnova Healthcare" class="footer-logo">
+                <p>Villnova Healthcare Pvt. Ltd.</p>
+                <p>Bridging the gap between scientific innovation and everyday wellness.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="products.html">Products</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Website: VillnovaHealthCare.Com</p>
+                <p>Email: info@villnovahealthcare.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Villnova HealthCare Pvt. Ltd. All rights reserved.</p>
+                <p class="disclaimer">Not for medicinal use. Consult your healthcare professional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
