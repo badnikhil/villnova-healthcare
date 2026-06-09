@@ -820,7 +820,9 @@ img {
 .footer-logo {
     height: 70px;
     margin-bottom: 25px;
-    filter: brightness(0) invert(1);
+    border-radius: var(--radius-sm);
+    background: white;
+    padding: 5px;
 }
 
 .footer-brand p {
