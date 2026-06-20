@@ -1,4 +1,29 @@
+// Immediately set theme to avoid flashing
+(function() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle Listener
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = 'light';
+            if (currentTheme === 'light') {
+                newTheme = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
@@ -35,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+            navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
             navbar.style.padding = '5px 0';
-            navbar.style.backgroundColor = 'rgba(250, 249, 246, 0.95)';
+            navbar.style.backgroundColor = 'rgba(27, 13, 30, 0.95)';
         } else {
-            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.02)';
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
             navbar.style.padding = '0';
-            navbar.style.backgroundColor = 'rgba(250, 249, 246, 0.7)';
+            navbar.style.backgroundColor = 'rgba(27, 13, 30, 1.0)';
         }
     });
 

@@ -1,27 +1,59 @@
 /* Base Variables & Reset */
 :root {
-    --color-primary: #0f3d23; /* Deeper, richer premium green */
-    --color-primary-light: #1c633a;
-    --color-gold: #d4af37; /* Richer, vibrant gold */
-    --color-gold-light: #f3e5ab;
-    --color-bg: #faf9f6; /* Premium pearl white */
-    --color-bg-alt: #f0ebe1;
-    --color-text-main: #2d2d2d;
-    --color-text-muted: #5a5a5a;
+    --color-primary: #3d1b4a; /* Deep Plum/Aubergine */
+    --color-primary-light: #693b7a; /* Medium Plum */
+    --color-gold: #cca14b; /* Elegant gold from logo */
+    --color-gold-light: #f7ebd3; /* Cream gold */
+    --color-purple: #a277b5; /* Elegant lavender from logo */
+    --color-purple-light: #f3edf7; /* Light lavender-white */
+    --color-bg: #fdfbfd; /* Pearl white with lavender tint */
+    --color-bg-alt: #f6edf8; /* Soft lavender-grey */
+    --color-text-main: #2b222f; /* Very dark plum-grey for text */
+    --color-text-muted: #6b5d71; /* Medium plum-grey */
     --color-white: #ffffff;
     
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Outfit', sans-serif;
     
-    --shadow-sm: 0 4px 10px rgba(0,0,0,0.03);
-    --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
-    --shadow-lg: 0 20px 40px rgba(15, 61, 35, 0.12);
-    --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.25);
+    --shadow-sm: 0 4px 10px rgba(27, 13, 30, 0.02);
+    --shadow-md: 0 10px 30px rgba(27, 13, 30, 0.05);
+    --shadow-lg: 0 20px 40px rgba(27, 13, 30, 0.08);
+    --shadow-gold: 0 10px 30px rgba(204, 161, 75, 0.15);
+    --shadow-purple: 0 10px 30px rgba(162, 119, 181, 0.15);
     
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --radius-sm: 12px;
     --radius-md: 24px;
     --radius-lg: 36px;
+}
+
+[data-theme="dark"] {
+    --color-primary: #cba3e4; /* Bright Lavender/Violet */
+    --color-primary-light: #dfc2f2;
+    --color-gold: #e5c57f; /* Warm gold */
+    --color-gold-light: #ffecc6;
+    --color-purple: #c19ae0;
+    --color-purple-light: #3d1b4a;
+    --color-bg: #110614; /* Extremely deep aubergine */
+    --color-bg-alt: #1b0d1e; /* Deep aubergine matching logo background */
+    --color-text-main: #f6f3f8; /* Soft lavender white */
+    --color-text-muted: #aa9eb1; /* Lavender grey */
+    --color-white: #1b0d1e; /* Deep aubergine as dark white */
+    
+    --shadow-sm: 0 4px 15px rgba(0,0,0,0.5);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.6);
+    --shadow-lg: 0 20px 40px rgba(0,0,0,0.7);
+    --shadow-gold: 0 10px 30px rgba(223, 186, 107, 0.1);
+    --shadow-purple: 0 10px 30px rgba(162, 119, 181, 0.1);
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6 {
+    color: var(--color-text-main); /* Premium off-white headings in dark mode */
 }
 
 * {
@@ -80,8 +112,8 @@ img {
 /* Buttons */
 .btn-primary {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #155532 100%);
-    color: var(--color-white);
+    background: linear-gradient(135deg, var(--color-purple) 0%, var(--color-primary-light) 100%);
+    color: #ffffff; /* Always white text on primary button */
     padding: 14px 32px;
     border-radius: 50px;
     font-weight: 500;
@@ -90,7 +122,7 @@ img {
     cursor: pointer;
     transition: var(--transition);
     text-align: center;
-    box-shadow: 0 6px 20px rgba(15, 61, 35, 0.2);
+    box-shadow: 0 6px 20px rgba(162, 119, 181, 0.25);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -100,7 +132,7 @@ img {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(135deg, #155532 0%, var(--color-primary) 100%);
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-purple) 100%);
     z-index: -1;
     transition: var(--transition);
     opacity: 0;
@@ -112,7 +144,11 @@ img {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(15, 61, 35, 0.3);
+    box-shadow: 0 10px 25px rgba(162, 119, 181, 0.35);
+}
+
+[data-theme="dark"] .btn-secondary {
+    color: var(--color-text-main);
 }
 
 .btn-secondary {
@@ -152,16 +188,14 @@ img {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(250, 249, 246, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #1b0d1e; /* Match logo background exactly */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     transition: var(--transition);
 }
 
@@ -175,7 +209,6 @@ img {
 .logo {
     height: 55px;
     object-fit: contain;
-    mix-blend-mode: multiply;
 }
 
 .nav-links {
@@ -184,6 +217,7 @@ img {
 }
 
 .nav-links a {
+    color: rgba(255, 255, 255, 0.85); /* White/light links on dark navbar */
     font-weight: 500;
     font-size: 1.05rem;
     position: relative;
@@ -207,7 +241,11 @@ img {
 }
 
 .nav-links a:hover {
-    color: var(--color-primary);
+    color: var(--color-gold);
+}
+
+.nav-links a.active {
+    color: var(--color-gold);
 }
 
 .mobile-menu-btn {
@@ -221,8 +259,40 @@ img {
     display: block;
     width: 25px;
     height: 2px;
-    background-color: var(--color-primary);
+    background-color: var(--color-gold); /* Gold for high contrast */
     transition: var(--transition);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--color-gold);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: var(--transition);
+    margin-left: 15px;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-toggle .moon-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: block;
 }
 
 /* Hero Section */
@@ -242,7 +312,7 @@ img {
     right: -10%;
     width: 700px;
     height: 700px;
-    background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(250,249,246,0) 70%);
+    background: radial-gradient(circle, rgba(204,161,75,0.12) 0%, rgba(253,251,253,0) 70%);
     border-radius: 50%;
     z-index: -1;
     filter: blur(40px);
@@ -253,10 +323,18 @@ img {
     left: -10%;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(15,61,35,0.08) 0%, rgba(250,249,246,0) 70%);
+    background: radial-gradient(circle, rgba(162,119,181,0.08) 0%, rgba(253,251,253,0) 70%);
     border-radius: 50%;
     z-index: -1;
     filter: blur(40px);
+}
+
+[data-theme="dark"] .hero-bg-accent {
+    background: radial-gradient(circle, rgba(223, 186, 107, 0.08) 0%, rgba(17, 6, 20, 0) 70%);
+}
+
+[data-theme="dark"] .hero-bg-accent-2 {
+    background: radial-gradient(circle, rgba(162, 119, 181, 0.08) 0%, rgba(17, 6, 20, 0) 70%);
 }
 
 .hero-container {
@@ -464,19 +542,19 @@ img {
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, rgba(212, 175, 55, 0.15) 100%);
+    background: #1b0d1e; /* Deep aubergine matching logo background */
     padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 450px;
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.02);
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(204, 161, 75, 0.1);
+    border: 1px solid rgba(204, 161, 75, 0.2);
 }
 
 .about-logo-overlay {
     max-width: 85%;
-    mix-blend-mode: multiply;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.08));
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
     transition: var(--transition);
 }
 
@@ -496,7 +574,7 @@ img {
     border-radius: 50px;
     font-weight: 600;
     color: var(--color-primary);
-    border: 1px solid rgba(26, 77, 46, 0.08);
+    border: 1px solid rgba(61, 27, 74, 0.08);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
@@ -537,13 +615,13 @@ img {
 .product-card:hover {
     box-shadow: var(--shadow-lg);
     transform: translateY(-15px);
-    border-color: rgba(212, 175, 55, 0.2);
+    border-color: rgba(204, 161, 75, 0.25);
 }
 
 .product-image-container {
     position: relative;
     padding: 30px;
-    background: linear-gradient(135deg, var(--color-bg-alt) 0%, rgba(15, 61, 35, 0.03) 100%);
+    background: linear-gradient(135deg, var(--color-bg-alt) 0%, rgba(162, 119, 181, 0.04) 100%);
     height: 280px;
     display: flex;
     align-items: center;
@@ -634,7 +712,7 @@ img {
     width: 100%;
     height: 100%;
     z-index: 2000;
-    background-color: rgba(15, 61, 35, 0.6);
+    background-color: rgba(27, 13, 30, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     opacity: 0;
@@ -796,7 +874,7 @@ img {
 
 /* Footer */
 .footer {
-    background-color: var(--color-primary);
+    background-color: #1b0d1e; /* Always match logo background */
     color: rgba(255,255,255,0.85);
     padding-top: 100px;
     position: relative;
@@ -807,7 +885,7 @@ img {
     content: '';
     position: absolute;
     top: 0; left: 0; width: 100%; height: 4px;
-    background: linear-gradient(90deg, var(--color-gold), #b8860b, var(--color-gold));
+    background: linear-gradient(90deg, var(--color-gold), var(--color-primary-light), var(--color-gold));
 }
 
 .footer-container {
@@ -821,7 +899,6 @@ img {
     height: 70px;
     margin-bottom: 25px;
     border-radius: var(--radius-sm);
-    background: white;
     padding: 5px;
 }
 
@@ -959,14 +1036,14 @@ img {
         left: -100%;
         width: 100%;
         height: calc(100vh - 85px);
-        background-color: rgba(250, 249, 246, 0.98);
+        background-color: rgba(27, 13, 30, 0.98); /* Deep aubergine matching header */
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 40px;
         transition: var(--transition);
-        box-shadow: inset 0 10px 20px rgba(0,0,0,0.05);
+        box-shadow: inset 0 10px 20px rgba(0,0,0,0.15);
     }
     
     .nav-links.active {
